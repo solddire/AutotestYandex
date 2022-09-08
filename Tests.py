@@ -1,6 +1,7 @@
 import allure
 
 from QuestionPage import Question_Program
+from selenium.webdriver.common.by import By
 
 
 class TestProgram:
@@ -12,7 +13,7 @@ class TestProgram:
         first_question.go_to_site()
         browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         first_question.do_first_question()
-        counter = browser.find_element_by_css_selector("#accordion__panel-0")
+        counter = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-0")
         assert counter.text == "Сутки — 400 рублей. Оплата курьеру — наличными или " \
                                "картой."
 
@@ -22,7 +23,7 @@ class TestProgram:
     def test_second_question(self, browser):
         second_question = Question_Program(browser)
         second_question.do_second_question()
-        counter = browser.find_element_by_css_selector("#accordion__panel-1")
+        counter = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-1")
         assert counter.text == "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, " \
                                "можете просто сделать несколько заказов — один за другим."
 
@@ -32,7 +33,7 @@ class TestProgram:
     def test_third_question(self, browser):
         third_question = Question_Program(browser)
         third_question.do_third_question()
-        counter = browser.find_element_by_css_selector("#accordion__panel-2")
+        counter = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-2")
         assert counter.text == "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. " \
                                "Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. " \
                                "Если мы привезли самокат 8 мая в 20:30, суточная аренда закончится 9 мая в 20:30."
@@ -43,7 +44,7 @@ class TestProgram:
     def test_third_question(self, browser):
         fourth_question = Question_Program(browser)
         fourth_question.do_fourth_question()
-        counter = browser.find_element_by_css_selector("#accordion__panel-3")
+        counter = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-3")
         assert counter.text == "Только начиная с завтрашнего дня. Но скоро станем расторопнее."
 
     @allure.title('Тест пятого вопроса')
@@ -52,7 +53,7 @@ class TestProgram:
     def test_fourth_question(self, browser):
         fifth_question = Question_Program(browser)
         fifth_question.do_fifth_question()
-        counter = browser.find_element_by_css_selector("#accordion__panel-4")
+        counter = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-4")
         assert counter.text == "Пока что нет! Но если что-то срочное — всегда можно позвонить в поддержку по " \
                                "красивому номеру 1010."
 
@@ -62,7 +63,7 @@ class TestProgram:
     def test_sixth_question(self, browser):
         sixth_question = Question_Program(browser)
         sixth_question.do_sixth_question()
-        counter = browser.find_element_by_css_selector("#accordion__panel-5")
+        counter = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-5")
         assert counter.text == "Самокат приезжает к вам с полной зарядкой. " \
                                "Этого хватает на восемь суток — даже если будете кататься без передышек и во сне. " \
                                "Зарядка не понадобится."
@@ -73,7 +74,7 @@ class TestProgram:
     def test_seventh_question(self, browser):
         seventh_question = Question_Program(browser)
         seventh_question.do_seventh_question()
-        counter = browser.find_element_by_css_selector("#accordion__panel-6")
+        counter = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-6")
         assert counter.text == "Да, пока самокат не привезли. " \
                                "Штрафа не будет, объяснительной записки тоже не попросим. Все же свои."
 
@@ -83,5 +84,5 @@ class TestProgram:
     def test_eighth_question(self, browser):
         eighth_question = Question_Program(browser)
         eighth_question.do_eighth_question()
-        counter = browser.find_element_by_css_selector("#accordion__panel-7")
+        counter = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-7")
         assert counter.text == "Да, обязательно. Всем самокатов! И Москве, и Московской области."
