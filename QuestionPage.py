@@ -23,7 +23,7 @@ class Question_Program(BasePage):
         self.driverwait(FireFoxLocators.LOCATOR_FIRST_QUESTION_BUTTON).click()
 
     # В данных методах реализуем нажатие на кнопки.
-    # P.S.В первом методе больше кликов,потому что кнопка куки мешает для нажатия.
+    # P.S. В первом методе больше кликов, потому что кнопка куки мешает для нажатия.
     def do_second_question(self):
         self.driverwait(FireFoxLocators.LOCATOR_SECOND_QUESTION_BUTTON).click()
 
