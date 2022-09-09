@@ -47,7 +47,7 @@ class TestProgram:
     @allure.title('Тест четвертого вопроса')
     @allure.feature('Fourth question')
     @allure.story('Проверяем четвертый вопрос')
-    def test_third_question(self, browser):
+    def test_fourth_question(self, browser):
         fourth_question = Question_Program(browser)
         fourth_question.do_fourth_question()
         label = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-3")
@@ -56,7 +56,7 @@ class TestProgram:
     @allure.title('Тест пятого вопроса')
     @allure.feature('Fifth question')
     @allure.story('Проверяем пятый вопрос')
-    def test_fourth_question(self, browser):
+    def test_fifth_question(self, browser):
         fifth_question = Question_Program(browser)
         fifth_question.do_fifth_question()
         label = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-4")
