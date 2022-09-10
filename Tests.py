@@ -30,8 +30,8 @@ class TestProgram:
     @allure.feature('Second question')
     @allure.story('Проверяем второй вопрос')
     def test_second_question(self, browser):
-        second_question = Question_Program(browser)
-        second_question.do_second_question()
+        second_question = Question_Program(browser)  # Создаем экземпляр класса second_question
+        second_question.do_second_question()  # Запускаем второй метод на проверку.
         label = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-1")
         assert label.text == "Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, " \
                              "можете просто сделать несколько заказов — один за другим."
@@ -40,8 +40,8 @@ class TestProgram:
     @allure.feature('Third question')
     @allure.story('Проверяем третий вопрос')
     def test_third_question(self, browser):
-        third_question = Question_Program(browser)
-        third_question.do_third_question()
+        third_question = Question_Program(browser)  # Создаем экземпляр класса third_question
+        third_question.do_third_question()  # Запускаем третий метод на проверку.
         label = browser.find_element(By.CSS_SELECTOR, "#accordion__panel-2")
         assert label.text == "Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. " \
                              "Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. " \
@@ -101,7 +101,7 @@ class TestProgram:
     @allure.story('Проверяем кнопку заказать')
     def test_click_button_top(self, browser):
         main = Main_Page(browser)  # Создаем экземпляр класса main.
-        browser.refresh()
+        browser.refresh()  # Обновил, чтобы сразу попасть на кнопку заказать.
         main.click_to_order_top()  # Нажимаем на кнопку заказать.
 
     @allure.title('Заполнение имени')
