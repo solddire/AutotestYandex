@@ -102,6 +102,8 @@ class Question_Program(BasePage):
 
     def do_eighth_question(self):
         self.driverwait(FireFoxLocators.LOCATOR_EIGHTH_QUESTION_BUTTON).click()
+
+
 class Main_Page(BasePage):
     def click_to_order_top(self):
         self.driverwait(FireFoxLocators.LOCATOR_TOP_ORDER_BUTTON).click()
